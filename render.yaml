@@ -4,6 +4,9 @@ services:
     runtime: static
     buildCommand: npm install --legacy-peer-deps && npm run build
     staticPublishPath: ./dist
+    envVars:
+      - key: SKIP_INSTALL_DEPS
+        value: "true"
     routes:
       - type: rewrite
         source: /*
